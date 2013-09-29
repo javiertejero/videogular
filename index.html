@@ -37,8 +37,6 @@
 
 <p>You could see a demo here: <a href="http://twofuckingdevelopers.com/examples/videogular/examples/">http://twofuckingdevelopers.com/examples/videogular/examples/</a></p>
 
-<p><strong>Videogular is currently under development</strong> and now we have a few CSS problems on IE10.</p>
-
 <h2>
 <a name="why-videogular" class="anchor" href="#why-videogular"><span class="octicon octicon-link"></span></a>Why Videogular?</h2>
 
@@ -60,7 +58,7 @@
 
 <p>To start using Videogular, just create a <code>DIV</code> with the <code>videogular</code> attribute and the <code>video</code> tag inside. In AngularJS the HTML5 <code>poster</code> video attribute is not supported, so you could use <code>vg-poster</code> to add your image to your video tag. With <code>vg-width</code> and <code>vg-height</code> directives you could set an Integer value or a binding to a scope variable. You don't need to set a width and height to video tag, Videogular will do that for you.</p>
 
-<div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">videogular</span> <span class="na">vg-width=</span><span class="s">"width"</span> <span class="na">vg-height=</span><span class="s">"height"</span><span class="nt">&gt;</span>
+<div class="highlight highlight-html"><pre><span class="nt">&lt;div</span> <span class="na">videogular</span> <span class="na">vg-width=</span><span class="s">"width"</span> <span class="na">vg-height=</span><span class="s">"height"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;video</span> <span class="na">class=</span><span class="s">'videoPlayer'</span> <span class="na">controls</span> <span class="na">preload=</span><span class="s">'none'</span> <span class="na">vg-poster=</span><span class="s">'assets/images/oceans-clip.png'</span><span class="nt">&gt;</span>
         <span class="nt">&lt;source</span> <span class="na">src=</span><span class="s">'assets/videos/oceans-clip.mp4'</span> <span class="na">type=</span><span class="s">'video/mp4'</span><span class="nt">&gt;</span>
         <span class="nt">&lt;source</span> <span class="na">src=</span><span class="s">'assets/videos/oceans-clip.webm'</span> <span class="na">type=</span><span class="s">'video/webm'</span><span class="nt">&gt;</span>
@@ -71,7 +69,7 @@
 
 <p>Because <code>videogular</code> is an HTML5 video player for AngularJS it works (obviously) with all AngularJS directives.</p>
 
-<div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">videogular</span> <span class="na">vg-width=</span><span class="s">"width"</span> <span class="na">vg-height=</span><span class="s">"height"</span><span class="nt">&gt;</span>
+<div class="highlight highlight-html"><pre><span class="nt">&lt;div</span> <span class="na">videogular</span> <span class="na">vg-width=</span><span class="s">"width"</span> <span class="na">vg-height=</span><span class="s">"height"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;video</span> <span class="na">class=</span><span class="s">'videoPlayer'</span> <span class="na">preload=</span><span class="s">'none'</span> <span class="na">vg-poster=</span><span class="s">'{{ data.poster }}'</span><span class="nt">&gt;</span>
         <span class="nt">&lt;source</span> <span class="na">ng-repeat=</span><span class="s">'media in data.media'</span> <span class="na">ng-src=</span><span class="s">'{{ media.url }}'</span> <span class="na">type=</span><span class="s">'{{ media.type }}'</span><span class="nt">&gt;</span>
     <span class="nt">&lt;/video&gt;</span>
@@ -120,7 +118,7 @@
 
 <p>Currently you will find a <code>plugins</code> folder with some source code to inspire you, however, you could see how easy is to write your own plugin with this example:</p>
 
-<div class="highlight"><pre><span class="kd">var</span> <span class="nx">myVGPlugin</span> <span class="o">=</span> <span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s2">"com.2fdevs.videogular.plugins.myPlugin"</span><span class="p">,</span> <span class="p">[]);</span>
+<div class="highlight highlight-js"><pre><span class="kd">var</span> <span class="nx">myVGPlugin</span> <span class="o">=</span> <span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s2">"com.2fdevs.videogular.plugins.myPlugin"</span><span class="p">,</span> <span class="p">[]);</span>
 <span class="nx">myVGPlugin</span><span class="p">.</span><span class="nx">directive</span><span class="p">(</span><span class="s2">"vgMyPlugin"</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">VG_EVENTS</span><span class="p">){</span>
         <span class="k">return</span> <span class="p">{</span>
             <span class="nx">restrict</span><span class="o">:</span> <span class="s2">"E"</span><span class="p">,</span>
@@ -142,12 +140,12 @@
 
 <p>To add a plugin just add your directives to your HTML. This is an example of a Videogular player:</p>
 
-<div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">videogular</span> <span class="na">vg-width=</span><span class="s">"400"</span> <span class="na">vg-height=</span><span class="s">"300"</span><span class="nt">&gt;</span>
+<div class="highlight highlight-html"><pre><span class="nt">&lt;div</span> <span class="na">videogular</span> <span class="na">vg-width=</span><span class="s">"400"</span> <span class="na">vg-height=</span><span class="s">"300"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;vg</span><span class="na">-buffering</span><span class="nt">&gt;</span><span class="err">&lt;</span>/vg-buffering&gt;
     <span class="nt">&lt;vg</span><span class="na">-overlayPlay</span><span class="nt">&gt;</span><span class="err">&lt;</span>/vg-overlayPlay&gt;
     <span class="nt">&lt;vg</span><span class="na">-myplugin</span><span class="nt">&gt;</span><span class="err">&lt;</span>/vg-myplugin&gt;
 
-    <span class="nt">&lt;vg</span><span class="na">-controls</span> <span class="na">vg-autohide=</span><span class="s">"false"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;vg</span><span class="na">-controls</span> <span class="na">vg-autohide=</span><span class="s">"false"</span> <span class="na">style=</span><span class="s">"height: 50px;"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;vg</span><span class="na">-playpauseButton</span><span class="nt">&gt;</span><span class="err">&lt;</span>/vg-playpauseButton&gt;
         <span class="nt">&lt;vg</span><span class="na">-timeDisplay</span><span class="nt">&gt;</span>{{ currentTime }}<span class="err">&lt;</span>/vg-timeDisplay&gt;
         <span class="nt">&lt;vg</span><span class="na">-scrubBar</span><span class="nt">&gt;</span>
@@ -169,11 +167,11 @@
 
 <p>Because AngularJS is so cool, you could just remove or add any directive and the player should work as expected. For example, you could remove <code>&lt;vg-timeDisplay&gt;{{ currentTime }}&lt;/vg-timeDisplay&gt;</code> and change <code>&lt;vg-timeDisplay&gt;{{ totalTime }}&lt;/vg-timeDisplay&gt;</code> for <code>&lt;vg-timeDisplay&gt;{{ currentTime }} / {{ totalTime }}&lt;/vg-timeDisplay&gt;</code> to change your time display component.</p>
 
-<div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">videogular</span> <span class="na">vg-width=</span><span class="s">"400"</span> <span class="na">vg-height=</span><span class="s">"300"</span><span class="nt">&gt;</span>
+<div class="highlight highlight-html"><pre><span class="nt">&lt;div</span> <span class="na">videogular</span> <span class="na">vg-width=</span><span class="s">"400"</span> <span class="na">vg-height=</span><span class="s">"300"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;vg</span><span class="na">-buffering</span><span class="nt">&gt;</span><span class="err">&lt;</span>/vg-buffering&gt;
     <span class="nt">&lt;vg</span><span class="na">-overlayPlay</span><span class="nt">&gt;</span><span class="err">&lt;</span>/vg-overlayPlay&gt;
 
-    <span class="nt">&lt;vg</span><span class="na">-controls</span> <span class="na">vg-autohide=</span><span class="s">"false"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;vg</span><span class="na">-controls</span> <span class="na">vg-autohide=</span><span class="s">"false"</span> <span class="na">style=</span><span class="s">"height: 50px;"</span><span class="nt">&gt;</span>
         <span class="nt">&lt;vg</span><span class="na">-playpauseButton</span><span class="nt">&gt;</span><span class="err">&lt;</span>/vg-playpauseButton&gt;
         <span class="nt">&lt;vg</span><span class="na">-scrubBar</span><span class="nt">&gt;</span>
             <span class="nt">&lt;vg</span><span class="na">-scrubbarcurrenttime</span><span class="nt">&gt;</span><span class="err">&lt;</span>/vg-scrubbarcurrenttime&gt;
@@ -196,7 +194,7 @@
 
 <p>Additionally, you will need to add your module plugins and videogular to your application:</p>
 
-<div class="highlight"><pre><span class="s2">"use strict"</span><span class="p">;</span>
+<div class="highlight highlight-js"><pre><span class="s2">"use strict"</span><span class="p">;</span>
 <span class="kd">var</span> <span class="nx">videogularApp</span> <span class="o">=</span> <span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s2">"videogularApp"</span><span class="p">,</span>
     <span class="p">[</span>
         <span class="s2">"controllers"</span><span class="p">,</span>
@@ -221,7 +219,7 @@
 
 <p>Setting a binding through a scope variable:</p>
 
-<div class="highlight"><pre><span class="c">&lt;!-- </span>
+<div class="highlight highlight-html"><pre><span class="c">&lt;!-- </span>
 <span class="c">"theme" is a scope variable with a value like "themes/default/videogular.css"</span>
 <span class="c">--&gt;</span>
 <span class="nt">&lt;div</span> <span class="na">videogular</span> <span class="na">vg-width=</span><span class="s">"400"</span> <span class="na">vg-height=</span><span class="s">"300"</span> <span class="na">vg-theme=</span><span class="s">"theme"</span><span class="nt">&gt;</span>
@@ -231,7 +229,7 @@
 
 <p>Setting a CSS theme:</p>
 
-<div class="highlight"><pre><span class="c">&lt;!-- </span>
+<div class="highlight highlight-html"><pre><span class="c">&lt;!-- </span>
 <span class="c">If you pass a String with ".css" inside it loads and injects the CSS on the HTML</span>
 <span class="c">--&gt;</span>
 <span class="nt">&lt;div</span> <span class="na">videogular</span> <span class="na">vg-width=</span><span class="s">"400"</span> <span class="na">vg-height=</span><span class="s">"300"</span> <span class="na">vg-theme=</span><span class="s">"themes/default/videogular.css"</span><span class="nt">&gt;</span>
@@ -240,6 +238,13 @@
 </pre></div>
 
 <p>To change and create your own themes should be very easy just modifying <code>examples/css/videogular.css</code> file.</p>
+
+<h2>
+<a name="credits" class="anchor" href="#credits"><span class="octicon octicon-link"></span></a>Credits</h2>
+
+<p>Videogular is an open source project maintained by (literally) <a href="http://twofuckingdevelopers.com/">two fucking developers</a>.</p>
+
+<p>We want to thank all our contributors: <a href="https://github.com/Elecash">Raúl Jiménez</a>, <a href="https://github.com/rogerz">Robert Zhang</a> and <a href="https://github.com/2fdevs/videogular/issues?state=open">our bug submitters</a>.</p>
       </section>
       <footer>
         <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
